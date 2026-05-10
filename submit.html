@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إضافة متجر - دليل مصر | أضف متجرك مجاناً</title>
+  <meta name="description" content="أضف متجرك إلى دليل مصر التجاري مجاناً. سجل بيانات متجرك وسيتم مراجعتها وإضافتها خلال 24 ساعة.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1A73E8">
+
+  <meta property="og:title" content="إضافة متجر - دليل مصر">
+  <meta property="og:description" content="أضف متجرك إلى أكبر دليل تجاري مصري مجاناً">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dalil-masr.com/submit.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="إضافة متجر - دليل مصر">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#submit-content" class="skip-link">تخطى إلى نموذج الإضافة</a>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location='index.html'" role="button" tabindex="0" aria-label="دليل مصر - الصفحة الرئيسية">
+        <div class="logo-icon" aria-hidden="true">🗺️</div>
+        دليل مصر
+      </div>
+      <nav class="header-nav" aria-label="القائمة الرئيسية">
+        <a href="index.html">الرئيسية</a>
+        <a href="submit.html" class="active" aria-current="page">إضافة متجر</a>
+        <a href="admin.html">لوحة التحكم</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="submit-page" id="submit-content">
+    <div class="submit-card">
+      <h2>🇪🇬 أضف متجرك إلى دليل مصر</h2>
+      <p class="subtitle">سجل بيانات متجرك وسيتم مراجعتها وإضافتها خلال 24 ساعة</p>
+
+      <form id="submit-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="s-name">اسم المتجر <span aria-hidden="true">*</span></label>
+            <input class="form-input" id="s-name" required placeholder="مثال: مطعم كشري التحرير" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="s-activity">النشاط <span aria-hidden="true">*</span></label>
+            <select class="form-select" id="s-activity" required>
+              <option value="">اختر النشاط</option>
+              <option>مطاعم</option>
+              <option>كافيه</option>
+              <option>سوبر ماركت</option>
+              <option>مخابز</option>
+              <option>صيدلية</option>
+              <option>حلواني</option>
+              <option>عطارة</option>
+              <option>مكتبات</option>
+              <option>ملابس</option>
+              <option>أحذية</option>
+              <option>موبايل</option>
+              <option>كمبيوتر</option>
+              <option>أدوات منزلية</option>
+              <option>كهرباء</option>
+              <option>سباكة</option>
+              <option>دهانات</option>
+              <option>مفروشات</option>
+              <option>سجاد</option>
+              <option>ستائر</option>
+              <option>هدايا</option>
+              <option>خدمات</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="s-gov">المحافظة <span aria-hidden="true">*</span></label>
+            <select class="form-select" id="s-gov" required>
+              <option value="">اختر المحافظة</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="s-dist">الحي <span aria-hidden="true">*</span></label>
+            <select class="form-select" id="s-dist" required disabled>
+              <option value="">اختر الحي أولاً</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="s-street">الشارع <span aria-hidden="true">*</span></label>
+          <select class="form-select" id="s-street" required disabled>
+            <option value="">اختر الشارع أولاً</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="s-address">العنوان بالتفصيل <span aria-hidden="true">*</span></label>
+          <textarea class="form-textarea" id="s-address" required placeholder="مثال: شارع فيصل الرئيسي، بجوار مسجد الرحمة، الدور الأول"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="s-phone">رقم الهاتف <span aria-hidden="true">*</span></label>
+            <input class="form-input" id="s-phone" required placeholder="مثال: 01012345678" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="s-whatsapp">واتساب (بدون +) <span aria-hidden="true">*</span></label>
+            <input class="form-input" id="s-whatsapp" required placeholder="مثال: 201012345678" type="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="s-location">رابط الموقع على Google Maps</label>
+          <input class="form-input" id="s-location" placeholder="https://maps.google.com/?q=30.0,31.0" type="url">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary w-full" style="padding:14px;font-size:16px;">✓ إرسال الطلب</button>
+        </div>
+      </form>
+
+      <p class="text-center mt-16 text-muted" style="font-size:13px;">
+        سيتم مراجعة طلبك من قبل الإدارة وإضافته خلال 24 ساعة
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div>جميع الحقوق محفوظة &copy; 2026 <span>دليل مصر</span> - أكبر دليل تجاري مصري</div>
+  </footer>
+
+  <script src="js/locations.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/submit.js"></script>
+</body>
+</html>

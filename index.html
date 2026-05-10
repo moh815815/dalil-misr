@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل مصر - أكبر دليل تجاري مصري | ابحث عن المحلات في جميع المحافظات</title>
+  <meta name="description" content="دليل مصر التجاري - أكبر دليل شامل للمحلات والأنشطة التجارية في جميع محافظات مصر. ابحث عن أي محل، مطعم، صيدلية، أو نشاط تجاري بالقرب منك.">
+  <meta name="keywords" content="دليل مصر, دليل تجاري, محلات مصر, نشاط تجاري, محافظات مصر, ابحث عن محل, سوبر ماركت, مطاعم مصر">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1A73E8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="دليل مصر">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="دليل مصر - أكبر دليل تجاري مصري">
+  <meta property="og:description" content="ابحث عن المحلات والأنشطة التجارية في جميع محافظات مصر">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dalil-masr.com">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="دليل مصر">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="دليل مصر - أكبر دليل تجاري مصري">
+  <meta name="twitter:description" content="ابحث عن المحلات والأنشطة التجارية في جميع محافظات مصر">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "دليل مصر",
+    "url": "https://dalil-masr.com",
+    "description": "أكبر دليل تجاري مصري - ابحث عن المحلات والأنشطة التجارية في جميع محافظات مصر",
+    "inLanguage": "ar",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dalil-masr.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#content-area" class="skip-link">تخطى إلى المحتوى الرئيسي</a>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="logo" onclick="App.navigateTo('governorates')" role="button" tabindex="0" aria-label="دليل مصر - الصفحة الرئيسية">
+        <div class="logo-icon" aria-hidden="true">🗺️</div>
+        دليل مصر
+      </div>
+      <div class="header-search" role="search">
+        <span class="search-icon" id="search-btn" role="button" tabindex="0" aria-label="بحث">🔍</span>
+        <input type="text" id="search-input" placeholder="ابحث عن نشاط تجاري، محل، شارع..." autocomplete="off" aria-label="بحث في الدليل التجاري">
+      </div>
+      <nav class="header-nav" aria-label="القائمة الرئيسية">
+        <a href="index.html" class="active" aria-current="page">الرئيسية</a>
+        <a href="submit.html">إضافة متجر</a>
+        <a href="admin.html">لوحة التحكم</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="إحصائيات الدليل">
+    <h1>🇪🇬 دليل مصر التجاري</h1>
+    <p>أكبر دليل تجاري مصري - ابحث عن أي محل أو نشاط تجاري في جميع محافظات مصر</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number" id="stat-govs" aria-live="polite">0</div>
+        <div class="hero-stat-label">محافظة</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number" id="stat-streets" aria-live="polite">0</div>
+        <div class="hero-stat-label">شارع رئيسي</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number" id="stat-shops" aria-live="polite">0</div>
+        <div class="hero-stat-label">محل تجاري</div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="breadcrumb" id="breadcrumb" aria-label="مسار التنقل">
+    <a onclick="App.navigateTo('governorates')">🏠 الرئيسية</a>
+  </nav>
+
+  <main class="content-area" id="content-area" role="main">
+    <div class="loading" role="status" aria-label="جار التحميل">
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">تفاصيل المحل</h3>
+        <button class="modal-close" id="modal-close" aria-label="إغلاق">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="footer" role="contentinfo">
+    <div>جميع الحقوق محفوظة &copy; 2026 <span>دليل مصر</span> - أكبر دليل تجاري مصري</div>
+  </footer>
+
+  <script src="js/locations.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

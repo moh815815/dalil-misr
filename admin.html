@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم - دليل مصر</title>
+  <meta name="description" content="لوحة التحكم - إدارة المحلات التجارية والأحياء والشوارع في دليل مصر">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1A73E8">
+
+  <meta property="og:title" content="لوحة التحكم - دليل مصر">
+  <meta property="og:description" content="إدارة المحلات التجارية في دليل مصر">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#admin-content" class="skip-link">تخطى إلى المحتوى</a>
+
+  <div class="admin-mobile-top">
+    <div class="logo" onclick="window.location='index.html'" role="button" tabindex="0">
+      <div class="logo-icon" aria-hidden="true">🗺️</div>
+      دليل مصر
+    </div>
+    <a href="index.html">← العودة</a>
+  </div>
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar" role="navigation" aria-label="القائمة الجانبية">
+      <div class="admin-logo">
+        <div class="logo-icon" aria-hidden="true">🗺️</div>
+        لوحة التحكم
+      </div>
+      <button class="admin-nav-item active" data-tab="shops" aria-current="true">🏪 المحلات</button>
+      <button class="admin-nav-item" data-tab="governorates">🏛️ المحافظات</button>
+      <button class="admin-nav-item" data-tab="districts">📍 الأحياء</button>
+      <button class="admin-nav-item" data-tab="streets">🛣️ الشوارع</button>
+      <button class="admin-nav-item" data-tab="pending">⏳ طلبات الانتظار</button>
+      <div style="margin-top:auto;padding:16px 20px;border-top:1px solid var(--border);">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text-secondary);font-weight:600;font-size:14px;">← العودة للدليل</a>
+      </div>
+    </aside>
+
+    <main class="admin-main" id="admin-content" role="main">
+      <div class="loading" role="status"><div class="spinner"></div></div>
+    </main>
+
+  </div>
+
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">إضافة</h3>
+        <button class="modal-close" onclick="Admin.closeModal()" aria-label="إغلاق">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/locations.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
