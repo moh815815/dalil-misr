@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مول العتبة - أكبر سوق إلكتروني متعدد المتاجر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C0392B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="مول العتبة - أكبر سوق إلكتروني متعدد المتاجر في مصر. تسوق من قلب منطقة العتبة بالقاهرة، مئات البائعين وآلاف المنتجات.">
+  <meta property="og:title" content="مول العتبة - أكبر سوق إلكتروني متعدد المتاجر">
+  <meta property="og:description" content="تسوق من قلب منطقة العتبة بالقاهرة. ملابس، إلكترونيات، أحذية، أدوات منزلية.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="مول العتبة">
+  <meta name="twitter:description" content="أكبر سوق إلكتروني متعدد المتاجر في مصر">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <p>جاري تحميل مول العتبة...</p>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-content">
+          <div class="contact-info">
+            <span><i class="fas fa-phone"></i> 0100 123 4567</span>
+            <span><i class="fas fa-envelope"></i> info@attabamall.com</span>
+          </div>
+          <div class="user-links">
+            <a href="#" onclick="navigate('dashboard')"><i class="fas fa-store"></i> لوحة التحكم</a>
+            <a href="#" onclick="navigate('admin')"><i class="fas fa-cogs"></i> الإدارة</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container">
+        <div class="header-main-content">
+          <div class="logo" onclick="navigate('home')">
+            <img src="https://placehold.co/60x60/C0392B/FFFFFF?text=ع" alt="مول العتبة">
+            <div class="logo-text">
+              <h1>مول العتبة</h1>
+              <span>تسوق من قلب القاهرة</span>
+            </div>
+          </div>
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="ابحث عن منتج، متجر، أو قسم..." onkeyup="handleSearch(event)">
+            <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="header-actions">
+            <button id="install-btn" class="install-btn" style="display:none" onclick="installApp()" title="تثبيت التطبيق">
+            <i class="fas fa-download"></i>
+          </button>
+          <div class="wishlist-btn" onclick="navigate('wishlist')" title="المفضلة">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-badge" id="wishlist-badge">0</span>
+          </div>
+          <div class="cart-btn" onclick="navigate('cart')">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </div>
+          <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav id="main-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#" onclick="navigate('home')" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+          <li class="dropdown">
+            <a href="#"><i class="fas fa-tshirt"></i> الملابس <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" onclick="navigate('category', {id: 'clothes', sub: 'attaba'})">مول العتبة الرئيسي</a>
+              <a href="#" onclick="navigate('category', {id: 'clothes', sub: 'mosky'})">منطقة الموسكي</a>
+              <a href="#" onclick="navigate('category', {id: 'clothes', sub: 'gumruk'})">شارع الجمرك</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#"><i class="fas fa-mobile-alt"></i> الإلكترونيات <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" onclick="navigate('category', {id: 'electronics', sub: 'attaba'})">مول العتبة الرئيسي</a>
+              <a href="#" onclick="navigate('category', {id: 'electronics', sub: 'abdulaziz'})">شارع عبد العزيز</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#"><i class="fas fa-shoe-prints"></i> الأحذية <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" onclick="navigate('category', {id: 'footwear', sub: 'attaba'})">مول العتبة الرئيسي</a>
+              <a href="#" onclick="navigate('category', {id: 'footwear', sub: 'mosky'})">منطقة الموسكي</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#"><i class="fas fa-couch"></i> المنزل <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" onclick="navigate('category', {id: 'household', sub: 'attaba'})">مول العتبة الرئيسي</a>
+              <a href="#" onclick="navigate('category', {id: 'household', sub: 'gumruk'})">شارع الجمرك</a>
+            </div>
+          </li>
+          <li><a href="#" onclick="navigate('dashboard')"><i class="fas fa-tachometer-alt"></i> لوحة التاجر</a></li>
+          <li class="mobile-only"><a href="#" onclick="navigate('admin')"><i class="fas fa-cogs"></i> لوحة الإدارة</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobile-sidebar-overlay" onclick="toggleMobileMenu()"></div>
+  <div id="mobile-sidebar">
+    <div class="sidebar-header">
+      <h3>مول العتبة</h3>
+      <button onclick="toggleMobileMenu()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sidebar-search">
+      <input type="text" placeholder="ابحث..." onkeyup="handleSearch(event)">
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#" onclick="navigate('home');toggleMobileMenu()"><i class="fas fa-home"></i> الرئيسية</a></li>
+      <li class="sidebar-dropdown">
+        <a href="#" onclick="toggleSidebarDropdown(this)"><i class="fas fa-tshirt"></i> الملابس <i class="fas fa-chevron-down"></i></a>
+        <div class="sidebar-submenu">
+          <a href="#" onclick="navigate('category',{id:'clothes',sub:'attaba'});toggleMobileMenu()">مول العتبة الرئيسي</a>
+          <a href="#" onclick="navigate('category',{id:'clothes',sub:'mosky'});toggleMobileMenu()">منطقة الموسكي</a>
+          <a href="#" onclick="navigate('category',{id:'clothes',sub:'gumruk'});toggleMobileMenu()">شارع الجمرك</a>
+        </div>
+      </li>
+      <li class="sidebar-dropdown">
+        <a href="#" onclick="toggleSidebarDropdown(this)"><i class="fas fa-mobile-alt"></i> الإلكترونيات <i class="fas fa-chevron-down"></i></a>
+        <div class="sidebar-submenu">
+          <a href="#" onclick="navigate('category',{id:'electronics',sub:'attaba'});toggleMobileMenu()">مول العتبة الرئيسي</a>
+          <a href="#" onclick="navigate('category',{id:'electronics',sub:'abdulaziz'});toggleMobileMenu()">شارع عبد العزيز</a>
+        </div>
+      </li>
+      <li class="sidebar-dropdown">
+        <a href="#" onclick="toggleSidebarDropdown(this)"><i class="fas fa-shoe-prints"></i> الأحذية <i class="fas fa-chevron-down"></i></a>
+        <div class="sidebar-submenu">
+          <a href="#" onclick="navigate('category',{id:'footwear',sub:'attaba'});toggleMobileMenu()">مول العتبة الرئيسي</a>
+          <a href="#" onclick="navigate('category',{id:'footwear',sub:'mosky'});toggleMobileMenu()">منطقة الموسكي</a>
+        </div>
+      </li>
+      <li class="sidebar-dropdown">
+        <a href="#" onclick="toggleSidebarDropdown(this)"><i class="fas fa-couch"></i> المنزل <i class="fas fa-chevron-down"></i></a>
+        <div class="sidebar-submenu">
+          <a href="#" onclick="navigate('category',{id:'household',sub:'attaba'});toggleMobileMenu()">مول العتبة الرئيسي</a>
+          <a href="#" onclick="navigate('category',{id:'household',sub:'gumruk'});toggleMobileMenu()">شارع الجمرك</a>
+        </div>
+      </li>
+      <li><a href="#" onclick="navigate('dashboard');toggleMobileMenu()"><i class="fas fa-tachometer-alt"></i> لوحة التاجر</a></li>
+      <li><a href="#" onclick="navigate('admin');toggleMobileMenu()"><i class="fas fa-cogs"></i> لوحة الإدارة</a></li>
+      <li><a href="#" onclick="navigate('wishlist');toggleMobileMenu()"><i class="fas fa-heart"></i> المفضلة</a></li>
+      <li><a href="#" onclick="navigate('cart');toggleMobileMenu()"><i class="fas fa-shopping-cart"></i> سلة التسوق</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container">
+      <div id="page-content"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="https://placehold.co/50x50/C0392B/FFFFFF?text=ع" alt="مول العتبة">
+            <h3>مول العتبة</h3>
+          </div>
+          <p>أكبر سوق إلكتروني متعدد المتاجر في مصر. نوفر لك تجربة تسوق فريدة من قلب منطقة العتبة بالقاهرة، مع مئات البائعين وآلاف المنتجات.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('home')">الرئيسية</a></li>
+            <li><a href="#">عن المول</a></li>
+            <li><a href="#">سياسة الخصوصية</a></li>
+            <li><a href="#">الشحن والتوصيل</a></li>
+            <li><a href="#">الإرجاع والاستبدال</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>الأقسام الرئيسية</h4>
+          <ul>
+            <li><a href="#" onclick="navigate('category',{id:'clothes'})">الملابس</a></li>
+            <li><a href="#" onclick="navigate('category',{id:'electronics'})">الإلكترونيات</a></li>
+            <li><a href="#" onclick="navigate('category',{id:'footwear'})">الأحذية</a></li>
+            <li><a href="#" onclick="navigate('category',{id:'household'})">أدوات المنزل</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> منطقة العتبة، وسط القاهرة، مصر</li>
+            <li><i class="fas fa-phone"></i> 0100 123 4567</li>
+            <li><i class="fas fa-envelope"></i> info@attabamall.com</li>
+            <li><i class="fas fa-clock"></i> يومياً 10:00 ص - 10:00 م</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; 2026 <strong>مول العتبة</strong> | تصميم وتطوير: فريق مول العتبة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Image Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1)"><i class="fas fa-chevron-right"></i></button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="lightbox-next" onclick="event.stopPropagation();lightboxNav(1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(r => console.log('SW registered', r.scope)).catch(e => console.warn('SW failed', e));
+      });
+    }
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); deferredPrompt = e;
+      const btn = document.getElementById('install-btn');
+      if (btn) btn.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
